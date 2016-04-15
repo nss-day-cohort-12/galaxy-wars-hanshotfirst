@@ -8,34 +8,33 @@ namespace GalaxyWar
 {
     class Hutt : Species, IReligious
     {
-        public int wealth { get; set; }
-        public string totem = "wallet";
-        public string deity;
-
-        string IReligious.totem
+        // https://github.com/nashville-software-school/csharp-dotnet-milestones/blob/master/1-foundations/resources/FND_CONSTRUCTOR_METHOD.md
+        
+        // properties unique to Hutts
+        public string totem { get; set; }
+        public string deity { get; set; }
+        public void pray()
         {
-            get
-            {
-                return totem;
-            }
 
-            set
-            {
-                totem = "credits";
-            }
+        }
+        public void crusade()
+        {
+
         }
 
-        string IReligious.deity
+        // constructor
+        public Hutt()
         {
-            get
-            {
-                return deity;
-            }
+            this.totem = "wallet";
+            this.deity = "Filthy Lucre";
+            this.weapon = "halitosis";  // property inherited from Species
+            this.language = "Huttese";  // property inherited from Species
+            this.economy = "racketeering";  // property inherited from Species
 
-            set
-            {
-                deity = "Filthy Lucre";
-            }
+            this.ship = new Spaceship();
+            this.ship.shipClass = "space barge";
+            this.ship.size = "big";
+            this.ship.name = "pankpa";
         }
 
     }

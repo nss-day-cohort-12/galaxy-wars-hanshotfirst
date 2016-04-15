@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    interface IReligious
+    class Spaceship
     {
-        void pray();
-        void crusade();
+        public string name { get; set; }
+        public string shipClass { get; set; }
+        public string size { get; set; }
     }
 }

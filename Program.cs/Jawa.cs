@@ -8,32 +8,32 @@ namespace GalaxyWar
 {
     class Jawa : Species, ISpacefaring
     {
-        public bool utini = true;
-
-        public bool hasScience
+        // properties unique to Jawas
+        public bool utini;
+        public bool sneaky;
+        public void launchArmada()
         {
-            get
-            {
-                return hasScience;
-            }
 
-            set
-            {
-                hasScience = true;
-            }
+        }
+        public void developTechnology()
+        {
+
         }
 
-        public string Spaceship
-        {
-            get
-            {
-                return Spaceship;
-            }
 
-            set
-            {
-                Spaceship = "frigate";
-            }
+        // constructor
+        public Jawa()
+        {
+            this.utini = true;
+            this.language = "Jawanese";  // property inherited from Species
+            this.sneaky = true;
+            this.weapon = "stun gun";    // property inherited from Species
+            this.economy = "scavenging";  // property inherited from Species
+
+            this.ship = new Spaceship();
+            this.ship.shipClass = "frigate";
+            this.ship.size = "relatively small";
+            this.ship.name = "lowassa";
         }
     }
 }

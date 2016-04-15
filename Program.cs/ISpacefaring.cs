@@ -8,7 +8,7 @@ namespace GalaxyWar
 {
     interface ISpacefaring
     {
-        string Spaceship { get; set; }
-        bool hasScience { get; set; }
+        void launchArmada();
+        void developTechnology();
     }
 }

@@ -15,5 +15,11 @@ namespace GalaxyWar
         public bool wearsClothing { get; set; }
         public string economy { get; set; }
         public string habitat { get; set; }
+        public Spaceship ship { get; set; }
+        public string weapon { get; set; }
+        public virtual void speak()
+        {
+            Console.WriteLine("Time for tea");
+        }
     }
 }

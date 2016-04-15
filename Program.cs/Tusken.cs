@@ -8,35 +8,36 @@ namespace GalaxyWar
 {
     class Tusken : Species, IWarrior
     {
-        public string weapon = "gaffi stick";
-        public string battleCry = "ooorooorooor";
-        public string goal = "warfare";
-        public string language = "Tusken";
-
-        string IWarrior.weapon
+        // properties unique to Tuskens
+        public string battleCry;
+        public void yell()
         {
-            get
-            {
-                return weapon;
-            }
-
-            set
-            {
-                weapon = "gaffi stick";
-            }
+            Console.WriteLine(battleCry);
+        }
+        public void sneakAttack()
+        {
+            Console.WriteLine("Tusken sneak attack!!");
+        }
+        public override void speak()
+        {
+            Console.WriteLine("yaaarrk ark ark ark");
         }
 
-        string IWarrior.battleCry
+        // constructor
+        public Tusken()
         {
-            get
-            {
-                return battleCry;
-            }
+            this.weapon = "gaffi stick";  // property inherited from Species
+            this.battleCry = "ooorooorooor";
+            this.goal = "warfare";  // property inherited from Species
+            this.language = "Tusken";  // property inherited from Species
+            this.economy = "feudal warfare";  // property inherited from Species
 
-            set
-            {
-                battleCry = "ooorooorooor";
-            }
+            this.ship = new Spaceship();
+            this.ship.shipClass = "rust bucket";
+            this.ship.size = "medium";
+            this.ship.name = "arrghgark";
         }
+
+        
     }
 }
