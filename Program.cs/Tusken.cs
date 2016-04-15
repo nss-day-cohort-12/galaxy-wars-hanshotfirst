@@ -8,10 +8,23 @@ namespace GalaxyWar
 {
     class Tusken : Species, IWarrior
     {
-        public string weapon = "gaffi stick";
+        // properties unique to Tuskens
         public string battleCry = "ooorooorooor";
-        public string goal = "warfare";
-        public string language = "Tusken";
+
+        // constructor
+        public Tusken()
+        {
+            this.weapon = "gaffi stick";  // property inherited from Species
+            this.battleCry = "ooorooorooor";
+            this.goal = "warfare";  // property inherited from Species
+            this.language = "Tusken";  // property inherited from Species
+            this.economy = "feudal warfare";  // property inherited from Species
+
+            this.ship = new Spaceship();
+            this.ship.shipClass = "rust bucket";
+            this.ship.size = "medium";
+            this.ship.name = "arrghgark";
+        }
 
         string IWarrior.weapon
         {
