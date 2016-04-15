@@ -11,6 +11,8 @@ namespace GalaxyWar
 
         static void Main(string[] args)
         {
+            Random random = new Random();
+
             Tusken tusken = new Tusken();
             tusken.population = 1000000;
             Console.WriteLine("Tuskens have goal: {0}", tusken.goal);
@@ -27,10 +29,10 @@ namespace GalaxyWar
 
             bool gameOn = true;
             int year = 2100;
-            while (false)
+            while (gameOn)
             {
                 Console.WriteLine("Year" + year);
-                var xx = gameRound(year, jawa.population, tusken.population, hutt.population);
+                var xx = gameRound(random, year, jawa.population, tusken.population, hutt.population);
                 jawa.population = xx[0];
                 tusken.population = xx[1];
                 hutt.population = xx[2];
@@ -60,7 +62,7 @@ namespace GalaxyWar
 
         }
 
-        static List<double> gameRound(int year, double sciencePop, double warfarePop, double religionPop)
+        static List<double> gameRound(Random random, int year, double sciencePop, double warfarePop, double religionPop)
         {
 
             bool scienceBeatsReligion = true;
@@ -70,9 +72,8 @@ namespace GalaxyWar
             if (year % 25 == 0)
             {
                 // one rule gets reversed every 25 years
-                Random random = new Random();
                 int randomNumber = random.Next(0, 3);
-                Console.WriteLine("a space-time anomaly reverses rule " + randomNumber + "!");
+                Console.WriteLine("A space-time anomaly reverses rule " + randomNumber + "!");
                 switch (randomNumber)
                 {
                     case 0:
@@ -161,6 +162,10 @@ namespace GalaxyWar
                     religionPop *= 0.98;
                 }
             }
+
+            if (sciencePop <= 0) sciencePop = 0;
+            if (warfarePop <= 0) warfarePop = 0;
+            if (religionPop <= 0) religionPop = 0;
 
             // return a list representing new values of sciencePop, warfarePop, religionPop
             List<double> returnValues = new List<double>();

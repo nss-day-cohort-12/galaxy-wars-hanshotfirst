@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gungan.cs" />
     <Compile Include="Hutt.cs" />
     <Compile Include="IReligious.cs" />
     <Compile Include="ISpacefaring.cs" />
@@ -54,7 +53,6 @@
     <Compile Include="Spaceship.cs" />
     <Compile Include="Species.cs" />
     <Compile Include="Tusken.cs" />
-    <Compile Include="Wookie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,7 +8,7 @@ namespace GalaxyWar
 {
     interface IReligious
     {
-        string totem { get; set; }
-        string deity { get; set; }
+        void pray();
+        void crusade();
     }
 }

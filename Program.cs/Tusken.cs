@@ -9,7 +9,19 @@ namespace GalaxyWar
     class Tusken : Species, IWarrior
     {
         // properties unique to Tuskens
-        public string battleCry = "ooorooorooor";
+        public string battleCry;
+        public void yell()
+        {
+            Console.WriteLine(battleCry);
+        }
+        public void sneakAttack()
+        {
+            Console.WriteLine("Tusken sneak attack!!");
+        }
+        public override void speak()
+        {
+            Console.WriteLine("yaaarrk ark ark ark");
+        }
 
         // constructor
         public Tusken()
@@ -26,30 +38,6 @@ namespace GalaxyWar
             this.ship.name = "arrghgark";
         }
 
-        string IWarrior.weapon
-        {
-            get
-            {
-                return weapon;
-            }
-
-            set
-            {
-                weapon = "gaffi stick";
-            }
-        }
-
-        string IWarrior.battleCry
-        {
-            get
-            {
-                return battleCry;
-            }
-
-            set
-            {
-                battleCry = "ooorooorooor";
-            }
-        }
+        
     }
 }

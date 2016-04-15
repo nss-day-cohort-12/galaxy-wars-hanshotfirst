@@ -11,6 +11,15 @@ namespace GalaxyWar
         // properties unique to Jawas
         public bool utini;
         public bool sneaky;
+        public void launchArmada()
+        {
+
+        }
+        public void developTechnology()
+        {
+
+        }
+
 
         // constructor
         public Jawa()
@@ -25,32 +34,6 @@ namespace GalaxyWar
             this.ship.shipClass = "frigate";
             this.ship.size = "relatively small";
             this.ship.name = "lowassa";
-        }
-
-        public bool hasScience
-        {
-            get
-            {
-                return hasScience;
-            }
-
-            set
-            {
-                hasScience = true;
-            }
-        }
-
-        public string Spaceship
-        {
-            get
-            {
-                return Spaceship;
-            }
-
-            set
-            {
-                Spaceship = "frigate";
-            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace GalaxyWar
 {
     interface IWarrior
     {
-        string weapon { get; set; }
-        string battleCry { get; set; }
+        void yell();
+        void sneakAttack();
     }
 }

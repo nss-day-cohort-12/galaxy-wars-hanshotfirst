@@ -13,6 +13,14 @@ namespace GalaxyWar
         // properties unique to Hutts
         public string totem { get; set; }
         public string deity { get; set; }
+        public void pray()
+        {
+
+        }
+        public void crusade()
+        {
+
+        }
 
         // constructor
         public Hutt()
@@ -27,32 +35,6 @@ namespace GalaxyWar
             this.ship.shipClass = "space barge";
             this.ship.size = "big";
             this.ship.name = "pankpa";
-        }
-
-        string IReligious.totem
-        {
-            get
-            {
-                return totem;
-            }
-
-            set
-            {
-                totem = "credits";
-            }
-        }
-
-        string IReligious.deity
-        {
-            get
-            {
-                return deity;
-            }
-
-            set
-            {
-                deity = "Filthy Lucre";
-            }
         }
 
     }
