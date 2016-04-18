@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyWar", "Program.cs\Gal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{903C69AD-B11F-4F6D-80FD-29EFCFC5C8A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyWarTests", "GalaxyWarTests\GalaxyWarTests.csproj", "{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{903C69AD-B11F-4F6D-80FD-29EFCFC5C8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{903C69AD-B11F-4F6D-80FD-29EFCFC5C8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{903C69AD-B11F-4F6D-80FD-29EFCFC5C8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
