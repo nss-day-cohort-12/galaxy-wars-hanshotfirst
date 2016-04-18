@@ -10,26 +10,23 @@ namespace GalaxyWar
     {
         // https://github.com/nashville-software-school/csharp-dotnet-milestones/blob/master/1-foundations/resources/FND_CONSTRUCTOR_METHOD.md
         
-        // properties unique to Hutts
+        // properties/methods that satisfy IReligious interface
         public string totem { get; set; }
-        public string deity { get; set; }
-        public void pray()
-        {
-
-        }
-        public void crusade()
-        {
-
-        }
+        public string deity { get; set;  }
+        public void pray() { }
+        public void crusade() { }
 
         // constructor
         public Hutt()
         {
             this.totem = "wallet";
-            this.deity = "Filthy Lucre";
+            this.deity = "Mammon";
             this.weapon = "halitosis";  // property inherited from Species
             this.language = "Huttese";  // property inherited from Species
             this.economy = "racketeering";  // property inherited from Species
+            this.isCute = false;  // property inherited from Species
+            this.hasTail = true;  // property inherited from Species
+            this.wearsClothing = false;  // property inherited from Species
 
             this.ship = new Spaceship();
             this.ship.shipClass = "space barge";

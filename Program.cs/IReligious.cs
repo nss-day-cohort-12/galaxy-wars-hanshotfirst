@@ -10,5 +10,7 @@ namespace GalaxyWar
     {
         void pray();
         void crusade();
+        string deity { get; set; }
+        string totem { get; set; }
     }
 }

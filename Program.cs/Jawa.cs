@@ -11,24 +11,26 @@ namespace GalaxyWar
         // properties unique to Jawas
         public bool utini;
         public bool sneaky;
-        public void launchArmada()
-        {
 
-        }
-        public void developTechnology()
-        {
-
-        }
-
+        // properties/methods to satisfy ISpacefaring interface
+        public bool hasScience { get; set; }
+        public bool prefersStarTrekToStarWars { get; set; }
+        public void launchArmada() { }
+        public void developTechnology() { }
 
         // constructor
         public Jawa()
         {
+            this.prefersStarTrekToStarWars = false;
+            this.hasScience = true;
             this.utini = true;
             this.language = "Jawanese";  // property inherited from Species
             this.sneaky = true;
             this.weapon = "stun gun";    // property inherited from Species
             this.economy = "scavenging";  // property inherited from Species
+            this.isCute = true;  // property inherited from Species
+            this.hasTail = false;  // property inherited from Species
+            this.wearsClothing = true;  // property inherited from Species
 
             this.ship = new Spaceship();
             this.ship.shipClass = "frigate";

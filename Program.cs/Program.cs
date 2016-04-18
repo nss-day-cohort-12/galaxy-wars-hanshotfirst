@@ -20,16 +20,27 @@ namespace GalaxyWar
 
             Hutt hutt = new Hutt();
             hutt.population = 1000000;
-            Console.WriteLine("Hutts have totem: {0}", hutt.totem);
+            Console.WriteLine("The Hutts, a religious species, worship {0}.", hutt.deity);
             Console.WriteLine("A Hutt ship is called a " + hutt.ship.name);
 
             Jawa jawa = new Jawa();
             jawa.population = 1000000;
             Console.WriteLine("A Jawa ship is called a " + jawa.ship.name);
 
+            Console.WriteLine("\nJabba says:");
+            hutt.speak();
+            hutt.speak("Koonyah mahlyass koong! Ees too rong tah oong jedi mind trick!");
+            hutt.speak("Ka cheesa crispa Greedo?", 3);
+            Console.WriteLine("\nA random Jawa chimes in:");
+            jawa.speak();
+            jawa.speak("Utini!", 3);
+            Console.WriteLine("\nQuoth the Tusken:");
+            tusken.speak();  // Tusken overrides default speak() from Species
+            tusken.speak("Nevermore");  // Species(parameter) will also be overridden
+
             bool gameOn = true;
             int year = 2100;
-            while (gameOn)
+            while (false)
             {
                 Console.WriteLine("Year" + year);
                 var xx = gameRound(random, year, jawa.population, tusken.population, hutt.population);
@@ -41,7 +52,12 @@ namespace GalaxyWar
                 Console.Write("  new Hutt pop = {0}\n", xx[2]);
 
                 // check for game over
-                if ( jawa.population <= 0 && tusken.population <= 0)
+                if ( jawa.population <= 0 && tusken.population <= 0 && hutt.population <= 0)
+                {
+                    Console.WriteLine("The scourge of war has devastated all three populations.\n");
+                    gameOn = false;
+                }
+                else if ( jawa.population <= 0 && tusken.population <= 0)
                 {
                     Console.WriteLine("Hutts rule the solar system.\n");
                     gameOn = false;
@@ -69,9 +85,11 @@ namespace GalaxyWar
             bool religionBeatsWarfare = true;
             bool warfareBeatsScience = true;
 
-            if (year % 25 == 0)
+            int yearsToReverse = 1;
+
+            if (year % yearsToReverse == 0)
             {
-                // one rule gets reversed every 25 years
+                // one rule gets reversed every yearsToReverse years
                 int randomNumber = random.Next(0, 3);
                 Console.WriteLine("A space-time anomaly reverses rule " + randomNumber + "!");
                 switch (randomNumber)
@@ -94,8 +112,8 @@ namespace GalaxyWar
             sciencePop -= 20000;
             warfarePop -= 20000;
             religionPop -= 20000;
-            // spacefaring recovers 5000
-            sciencePop += 5000;
+            // spacefaring recovers 8000
+            sciencePop += 8000;
             // additional 10000 religious killed by warfare
             religionPop -= 10000;
             // additional 10000 science killed by warfare
@@ -114,16 +132,16 @@ namespace GalaxyWar
             {
                 if (sciencePop > 0)
                 {
-                    // deduct 2% from religionPop
-                    religionPop *= 0.98;
+                    // deduct 5% from religionPop
+                    religionPop *= 0.95;
                 }
             }
             else
             {
                 if (religionPop > 0)
                 {
-                    // deduct 2% from sciencePop
-                    sciencePop *= 0.98;
+                    // deduct 5% from sciencePop
+                    sciencePop *= 0.95;
                 }
             }
 
@@ -132,16 +150,16 @@ namespace GalaxyWar
             {
                 if (warfarePop > 0)
                 {
-                    // deduct 2% from sciencePop
-                    sciencePop *= 0.98;
+                    // deduct 5% from sciencePop
+                    sciencePop *= 0.95;
                 }
             }
             else
             {
                 if (sciencePop > 0)
                 {
-                    // deduct 2% from warfarePop
-                    warfarePop *= 0.98;
+                    // deduct 5% from warfarePop
+                    warfarePop *= 0.95;
                 }
             }
 
@@ -150,16 +168,16 @@ namespace GalaxyWar
             {
                 if (religionPop > 0)
                 {
-                    // deduct 2% from warfarePop
-                    warfarePop *= 0.98;
+                    // deduct 5% from warfarePop
+                    warfarePop *= 0.95;
                 }
             }
             else
             {
                 if (warfarePop > 0)
                 {
-                    // deduct 2% from religionPop
-                    religionPop *= 0.98;
+                    // deduct 5% from religionPop
+                    religionPop *= 0.95;
                 }
             }
 
