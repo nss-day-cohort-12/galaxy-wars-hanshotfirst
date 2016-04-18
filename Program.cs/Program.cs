@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Program
+    public class Program
     {
 
-        static void Main(string[] args)
+        static public void Main(string[] args)
         {
             Random random = new Random();
 
@@ -62,7 +62,7 @@ namespace GalaxyWar
 
         }
 
-        static List<double> gameRound(Random random, int year, double sciencePop, double warfarePop, double religionPop)
+        static public List<double> gameRound(Random random, int year, double sciencePop, double warfarePop, double religionPop)
         {
 
             bool scienceBeatsReligion = true;

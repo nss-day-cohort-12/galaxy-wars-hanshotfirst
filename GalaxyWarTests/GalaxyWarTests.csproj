@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{903C69AD-B11F-4F6D-80FD-29EFCFC5C8A6}</ProjectGuid>
+    <ProjectGuid>{496EA36E-FA96-4CE1-AE6E-7E53AA731CBB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestProject1</RootNamespace>
-    <AssemblyName>UnitTestProject1</AssemblyName>
+    <RootNamespace>GalaxyWarTests</RootNamespace>
+    <AssemblyName>GalaxyWarTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,11 +51,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ProgramTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Program.cs\GalaxyWar.csproj">
-      <Project>{1b69f1e8-f90b-400a-8f83-e72c33939557}</Project>
+      <Project>{1B69F1E8-F90B-400A-8F83-E72C33939557}</Project>
       <Name>GalaxyWar</Name>
     </ProjectReference>
   </ItemGroup>
