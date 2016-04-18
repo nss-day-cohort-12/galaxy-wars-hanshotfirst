@@ -42,7 +42,7 @@ namespace GalaxyWar
             int year = 2100;
             while (false)
             {
-                Console.WriteLine("Year" + year);
+                Console.WriteLine("Year: " + year);
                 var xx = gameRound(random, year, jawa.population, tusken.population, hutt.population);
                 jawa.population = xx[0];
                 tusken.population = xx[1];
@@ -80,7 +80,6 @@ namespace GalaxyWar
 
         static List<double> gameRound(Random random, int year, double sciencePop, double warfarePop, double religionPop)
         {
-
             bool scienceBeatsReligion = true;
             bool religionBeatsWarfare = true;
             bool warfareBeatsScience = true;

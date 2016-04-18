@@ -31,6 +31,7 @@ namespace GalaxyWar
             this.isCute = true;  // property inherited from Species
             this.hasTail = false;  // property inherited from Species
             this.wearsClothing = true;  // property inherited from Species
+            this.goal = "science";  // property inherited from Species
 
             this.ship = new Spaceship();
             this.ship.shipClass = "frigate";
