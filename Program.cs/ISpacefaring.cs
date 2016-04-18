@@ -8,6 +8,8 @@ namespace GalaxyWar
 {
     interface ISpacefaring
     {
+        bool hasScience { get; set; }
+        bool prefersStarTrekToStarWars { get; set; }
         void launchArmada();
         void developTechnology();
     }

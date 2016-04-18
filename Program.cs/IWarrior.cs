@@ -8,6 +8,8 @@ namespace GalaxyWar
 {
     interface IWarrior
     {
+        string battleCry { get; set; }
+        bool bloodthirsty { get; set; }
         void yell();
         void sneakAttack();
     }
