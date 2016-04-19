@@ -33,6 +33,8 @@ namespace GalaxyWar
             this.ship.shipClass = "space barge";
             this.ship.size = "big";
             this.ship.name = "pankpa";
+            this.ship.weaponDamage = 400;
+            this.ship.shields = 100;
         }
 
     }
