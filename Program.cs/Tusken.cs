@@ -45,8 +45,8 @@ namespace GalaxyWar
             this.ship.shipClass = "rust bucket";
             this.ship.size = "medium";
             this.ship.name = "arrghgark";
-            this.ship.weaponDamage = 300;
-            this.ship.shields = 200;
+            this.ship.weaponDamage = 45000;
+            this.ship.shields = 23000;
         }
 
         

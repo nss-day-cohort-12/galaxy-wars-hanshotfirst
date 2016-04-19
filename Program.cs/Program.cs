@@ -36,7 +36,7 @@ namespace GalaxyWar
             jawa.speak("Utini!", 3);
             Console.WriteLine("\nQuoth the Tusken:");
             tusken.speak();  // Tusken overrides default speak() from Species
-            tusken.speak("Nevermore");  // Species(parameter) will also be overridden
+            tusken.speak("Nevermore");  // speak(parameter) will also be overridden
 
             bool gameOn = true;
             int year = 2100;
@@ -84,7 +84,7 @@ namespace GalaxyWar
             bool religionBeatsWarfare = true;
             bool warfareBeatsScience = true;
 
-            int yearsToReverse = 25;
+            int yearsToReverse = 1;
 
             if (year % yearsToReverse == 0)
             {
@@ -126,35 +126,14 @@ namespace GalaxyWar
             hutt.population += jawa.population * 0.01;
             jawa.population *= 0.99;
 
-            if (jawa.ship.shields < hutt.ship.weaponDamage)
-            {
-                jawa.population -= hutt.ship.weaponDamage;
-            }
-
-            if (jawa.ship.shields < tusken.ship.weaponDamage)
-            {
-                jawa.population -= tusken.ship.weaponDamage;
-            }
-
-            if (hutt.ship.shields < tusken.ship.weaponDamage)
-            {
-                hutt.population -= tusken.ship.weaponDamage;
-            }
-
-            if (hutt.ship.shields < jawa.ship.weaponDamage)
-            {
-                hutt.population -= jawa.ship.weaponDamage;
-            }
-
-            if (tusken.ship.shields < hutt.ship.weaponDamage)
-            {
-                tusken.population -= hutt.ship.weaponDamage;
-            }
-
-            if (tusken.ship.shields < jawa.ship.weaponDamage)
-            {
-                tusken.population -= jawa.ship.weaponDamage;
-            }
+           
+                jawa.population -= hutt.ship.weaponDamage-jawa.ship.shields;            
+                jawa.population -= tusken.ship.weaponDamage - jawa.ship.shields;        
+                hutt.population -= tusken.ship.weaponDamage - hutt.ship.shields;        
+                hutt.population -= jawa.ship.weaponDamage - hutt.ship.shields;  
+                tusken.population -= hutt.ship.weaponDamage - tusken.ship.shields;         
+                tusken.population -= jawa.ship.weaponDamage - tusken.ship.shields;
+            
 
             // science fights religion
             if (scienceBeatsReligion)
