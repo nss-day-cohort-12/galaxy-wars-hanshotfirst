@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Hutt : Species, IReligious
+    public class Hutt : Species, IReligious
     {
         // https://github.com/nashville-software-school/csharp-dotnet-milestones/blob/master/1-foundations/resources/FND_CONSTRUCTOR_METHOD.md
         

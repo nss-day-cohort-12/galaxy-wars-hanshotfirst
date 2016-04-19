@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Tusken : Species, IWarrior
+    public class Tusken : Species, IWarrior
     {
         // properties/methods to satisfy IWarrior interface
         public string battleCry { get; set; }

@@ -78,7 +78,7 @@ namespace GalaxyWar
 
         }
 
-        static List<double> gameRound(Random random, int year, Jawa jawa, Tusken tusken, Hutt hutt)
+        static public List<double> gameRound(Random random, int year, Jawa jawa, Tusken tusken, Hutt hutt)
         {
             bool scienceBeatsReligion = true;
             bool religionBeatsWarfare = true;
