@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace GalaxyWar
 {
    public  class Spaceship
+
     {
         public string name { get; set; }
         public string shipClass { get; set; }

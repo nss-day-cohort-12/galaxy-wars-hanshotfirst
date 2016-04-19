@@ -37,8 +37,8 @@ namespace GalaxyWar
             this.ship.shipClass = "frigate";
             this.ship.size = "relatively small";
             this.ship.name = "lowassa";
-            this.ship.weaponDamage = 100;
-            this.ship.shields = 400;
+            this.ship.weaponDamage = 32000;
+            this.ship.shields = 32000;
         }
     }
 }
