@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Species
+    public class Species
     {
         public string goal { get; set; }
         public double population { get; set; }
