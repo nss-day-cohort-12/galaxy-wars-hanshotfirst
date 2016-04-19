@@ -144,7 +144,7 @@ namespace GalaxyWar
                 if (jawa.population > 0)
                 {
                     // deduct 5% from religionPop
-                   jawa.population *= 0.95;
+                   hutt.population *= 0.95;
                 }
             }
             else
@@ -152,7 +152,7 @@ namespace GalaxyWar
                 if (hutt.population > 0)
                 {
                     // deduct 5% from sciencePop
-                    hutt.population *= 0.95;
+                    jawa.population *= 0.95;
                 }
             }
 
