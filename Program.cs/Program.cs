@@ -77,6 +77,9 @@ namespace GalaxyWar
            }
 
         }
+        Jawa jawa = new Jawa();
+        Tusken tusken = new Tusken();
+        Hutt hutt = new Hutt();
 
         static public List<double> gameRound(Random random, int year, Jawa jawa, Tusken tusken, Hutt hutt)
         {

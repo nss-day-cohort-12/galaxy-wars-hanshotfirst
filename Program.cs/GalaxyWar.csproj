@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hutt.cs" />
-    <Compile Include="IReligious.cs" />
-    <Compile Include="ISpacefaring.cs" />
-    <Compile Include="IWarrior.cs" />
-    <Compile Include="Jawa.cs" />
+    <Compile Include="Space-Races\Hutt.cs" />
+    <Compile Include="Interfaces\IReligious.cs" />
+    <Compile Include="Interfaces\ISpacefaring.cs" />
+    <Compile Include="Interfaces\IWarrior.cs" />
+    <Compile Include="Space-Races\Jawa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spaceship.cs" />
     <Compile Include="Species.cs" />
-    <Compile Include="Tusken.cs" />
+    <Compile Include="Space-Races\Tusken.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
