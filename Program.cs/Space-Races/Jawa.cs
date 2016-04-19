@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Jawa : Species, ISpacefaring
+    public class Jawa : Species, ISpacefaring
     {
         // properties unique to Jawas
         public bool utini;
