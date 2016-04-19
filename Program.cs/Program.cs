@@ -40,10 +40,10 @@ namespace GalaxyWar
 
             bool gameOn = true;
             int year = 2100;
-            while (false)
+            while (gameOn)
             {
                 Console.WriteLine("Year: " + year);
-                var xx = gameRound(random, year, jawa.population, tusken.population, hutt.population);
+                var xx = gameRound(random, year, jawa, tusken, hutt);
                 jawa.population = xx[0];
                 tusken.population = xx[1];
                 hutt.population = xx[2];
@@ -78,13 +78,13 @@ namespace GalaxyWar
 
         }
 
-        static public List<double> gameRound(Random random, int year, double sciencePop, double warfarePop, double religionPop)
+        static public List<double> gameRound(Random random, int year, Jawa jawa, Tusken tusken, Hutt hutt)
         {
             bool scienceBeatsReligion = true;
             bool religionBeatsWarfare = true;
             bool warfareBeatsScience = true;
 
-            int yearsToReverse = 1;
+            int yearsToReverse = 25;
 
             if (year % yearsToReverse == 0)
             {
@@ -108,87 +108,117 @@ namespace GalaxyWar
             }
 
             // each species loses 20000
-            sciencePop -= 20000;
-            warfarePop -= 20000;
-            religionPop -= 20000;
+            jawa.population -= 20000;
+            tusken.population -= 20000;
+            hutt.population -= 20000;
             // spacefaring recovers 8000
-            sciencePop += 8000;
+            jawa.population += 8000;
             // additional 10000 religious killed by warfare
-            religionPop -= 10000;
+            hutt.population -= 10000;
             // additional 10000 science killed by warfare
-            sciencePop -= 10000;
+            jawa.population -= 10000;
             // warfare loses 2500
-            warfarePop -= 2500;
+            tusken.population -= 2500;
             // religious gets, and warfare loses, 1% of warfare pop
-            religionPop += warfarePop * 0.01;
-            warfarePop *= 0.99;
+            hutt.population += tusken.population * 0.01;
+            tusken.population *= 0.99;
             // religious gets, and science loses, 1% of science pop
-            religionPop += sciencePop * 0.01;
-            sciencePop *= 0.99;
+            hutt.population += jawa.population * 0.01;
+            jawa.population *= 0.99;
+
+            if (jawa.ship.shields < hutt.ship.weaponDamage)
+            {
+                jawa.population -= hutt.ship.weaponDamage;
+            }
+
+            if (jawa.ship.shields < tusken.ship.weaponDamage)
+            {
+                jawa.population -= tusken.ship.weaponDamage;
+            }
+
+            if (hutt.ship.shields < tusken.ship.weaponDamage)
+            {
+                hutt.population -= tusken.ship.weaponDamage;
+            }
+
+            if (hutt.ship.shields < jawa.ship.weaponDamage)
+            {
+                hutt.population -= jawa.ship.weaponDamage;
+            }
+
+            if (tusken.ship.shields < hutt.ship.weaponDamage)
+            {
+                tusken.population -= hutt.ship.weaponDamage;
+            }
+
+            if (tusken.ship.shields < jawa.ship.weaponDamage)
+            {
+                tusken.population -= jawa.ship.weaponDamage;
+            }
 
             // science fights religion
             if (scienceBeatsReligion)
             {
-                if (sciencePop > 0)
+                if (jawa.population > 0)
                 {
                     // deduct 5% from religionPop
-                    religionPop *= 0.95;
+                   jawa.population *= 0.95;
                 }
             }
             else
             {
-                if (religionPop > 0)
+                if (hutt.population > 0)
                 {
                     // deduct 5% from sciencePop
-                    sciencePop *= 0.95;
+                    hutt.population *= 0.95;
                 }
             }
 
             // science fights warfare
             if (warfareBeatsScience)
             {
-                if (warfarePop > 0)
+                if (tusken.population > 0)
                 {
                     // deduct 5% from sciencePop
-                    sciencePop *= 0.95;
+                    jawa.population *= 0.95;
                 }
             }
             else
             {
-                if (sciencePop > 0)
+                if (jawa.population > 0)
                 {
                     // deduct 5% from warfarePop
-                    warfarePop *= 0.95;
+                    tusken.population *= 0.95;
                 }
             }
 
             // warfare fights religion
             if (religionBeatsWarfare)
             {
-                if (religionPop > 0)
+                if (hutt.population > 0)
                 {
                     // deduct 5% from warfarePop
-                    warfarePop *= 0.95;
+                    tusken.population *= 0.95;
                 }
             }
             else
             {
-                if (warfarePop > 0)
+                if (tusken.population > 0)
                 {
                     // deduct 5% from religionPop
-                    religionPop *= 0.95;
+                    hutt.population *= 0.95;
                 }
             }
 
-            if (sciencePop <= 0) sciencePop = 0;
-            if (warfarePop <= 0) warfarePop = 0;
-            if (religionPop <= 0) religionPop = 0;
+            if (jawa.population <= 0) jawa.population = 0;
+            if (tusken.population <= 0) tusken.population = 0;
+            if (hutt.population <= 0) hutt.population = 0;
 
             // return a list representing new values of sciencePop, warfarePop, religionPop
             List<double> returnValues = new List<double>();
-            returnValues.Add(Math.Floor(sciencePop));
-            returnValues.Add(Math.Floor(warfarePop));
-            returnValues.Add(Math.Floor(religionPop));
+            returnValues.Add(Math.Floor(jawa.population));
+            returnValues.Add(Math.Floor(tusken.population));
+            returnValues.Add(Math.Floor(hutt.population));
             return returnValues;
         }
     }

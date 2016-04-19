@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalaxyWar
 {
-    class Tusken : Species, IWarrior
+    public class Tusken : Species, IWarrior
     {
         // properties/methods to satisfy IWarrior interface
         public string battleCry { get; set; }
@@ -45,6 +45,8 @@ namespace GalaxyWar
             this.ship.shipClass = "rust bucket";
             this.ship.size = "medium";
             this.ship.name = "arrghgark";
+            this.ship.weaponDamage = 300;
+            this.ship.shields = 200;
         }
 
         
